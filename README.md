@@ -23,6 +23,19 @@ context = {
 }
 ```
 Notice that the counter should be a list contain the counter, this approach is due to jinja2 scoping rules, check [this](https://stackoverflow.com/questions/7537439/how-to-increment-a-variable-on-a-for-loop-in-jinja-template/32700975#32700975) for more information.
+<br>
+
+Replace docxtpl `DocxTemplate` with `CustomDocxTemplate` and use it as usual.
+```
+from docxtplevm.CustomDocxTemplate import CustomDocxTemplate
+
+tpl = CustomDocxTemplate("tests/test_file/test.docx")
+
+# Add your context here...
+
+tpl.render(context)
+tpl.save("tests/test_file/test_output.docx")
+```
 
 # Example
 * context
